@@ -22,15 +22,15 @@ namespace Sheet4StarSubs.Controllers
         [HttpPost]
         public ActionResult Index(Order newOrder, FormCollection myform)
         {
-            double[] subPrice = new double[] { 3.99, 4.99, 5.99, 6.99, 7.99, 8.99, 10.99 };
+            double[] subPrice = new double[] { 1.99, 2.99, 3.99, 4.99, 5.99, 6.99, 7.99 };
             string subName = Enum.GetName(typeof(SubType), newOrder.Sub);
             var priceOfSub = subPrice[(int)newOrder.Sub];
 
-            double[] sizePrice = new double[] { 3.50, 6.50, 9.50, 11.50};
+            double[] sizePrice = new double[] { 1.49, 2.49, 3.49, 4.49};
             string sizeOfBread = Enum.GetName(typeof(SizeType), newOrder.Size);
             var priceOfBread = sizePrice[(int)newOrder.Size];
 
-            double[] dealPrice = new double[] { 0, 1.25, 2.25 };
+            double[] dealPrice = new double[] { 0, 1.50, 2.50 };
             string dealName = Enum.GetName(typeof(MealType), newOrder.MealDeal);
             var priceOfDeal = dealPrice[(int)newOrder.MealDeal];
 
