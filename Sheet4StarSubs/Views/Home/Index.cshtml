@@ -1,0 +1,58 @@
+﻿@model Sheet4StarSubs.Models.Order
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Index </title>
+</head>
+<body style="text-align:center;">
+    <div style="text-align: center">
+        <h1>Welcome to StarSubs!</h1>
+    </div>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+<div class="order-form" style="width:600px; margin:auto; ">
+    <div class="order-form-lists">
+        <div class="order-form-lists" style="float:left; width:50%;">
+            <p><b>Select a Sandwich</b></p>
+            @Html.ListBoxFor(m => m.Sub, new SelectList(Enum.GetValues(typeof(Sheet4StarSubs.Models.SubType))))
+        </div>
+        <div class="order-form-lists" style="float:right; width:50%;">
+            <p><b>Select a Size</b></p>
+            @Html.ListBoxFor(m => m.Size, new SelectList(Enum.GetValues(typeof(Sheet4StarSubs.Models.SizeType))))
+        </div>
+    </div>
+
+
+
+    <div class="order-form-button_group" style="padding-bottom:7%;padding-top:20%;">
+        <p><b>Select a Meal Deal</b></p>
+        <div class="order-form-radioButtnos">
+            @Html.RadioButtonFor(m => m.MealDeal, Sheet4StarSubs.Models.MealType.None) @("None") &nbsp;
+            @Html.RadioButtonFor(m => m.MealDeal, Sheet4StarSubs.Models.MealType.DrinkAndChips) @("Drink and Chips")  &nbsp;
+            @Html.RadioButtonFor(m => m.MealDeal, Sheet4StarSubs.Models.MealType.DrinkAndCookies) @("Drink and Cookies")
+        </div>
+        <br />
+        <div>
+            <p>
+                Quantity: &nbsp;
+                @Html.TextBox("quantity", null, new { @class = "number", name = "quantity", min = 1, max = 3, value = 1 })
+            </p>
+        </div>
+    </div>
+    <input type="submit" value="Place Order" class="order-form-submit">
+    <br />
+    <!--Start Sheet 5-->
+    @Html.ActionLink("StarSubs Totals", "Totals", "Home")
+    <!--End Sheet 5-->
+
+</div>
+    }
+</body>
+</html>
+
