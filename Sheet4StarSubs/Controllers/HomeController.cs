@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Sheet4StarSubs.Models;
 
 namespace Sheet4StarSubs.Controllers
 {
@@ -51,6 +50,7 @@ namespace Sheet4StarSubs.Controllers
             ViewBag.DealName = dealName;
             ViewBag.PriceDeal = priceOfDeal;
             ViewBag.SingleCost = singlecost;
+
             //Start Sheet 5
             ViewBag.Quantity = quantity;
             //End Sheet 5
