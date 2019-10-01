@@ -38,16 +38,16 @@ namespace Sheet4StarSubs.Controllers
             double quantity = Int32.Parse(myform["quantity"]);
             //End Sheet 5
 
-            double totalPriceSub = priceOfSub + priceOfBread;
+            double totalPriceOfSub = priceOfSub + priceOfBread;
 
-            double singlecost = totalPriceSub + priceOfDeal;
+            double singlecost = totalPriceOfSub + priceOfDeal;
 
-            double cost = (totalPriceSub + priceOfDeal)*quantity;
+            double cost = (totalPriceOfSub + priceOfDeal)*quantity;
 
             ViewBag.Cost = cost;
             ViewBag.Sub = subName;
             ViewBag.Bread = sizeOfBread;
-            ViewBag.PriceSub = totalPriceSub;
+            ViewBag.PriceSub = totalPriceOfSub;
             ViewBag.DealName = dealName;
             ViewBag.PriceDeal = priceOfDeal;
             ViewBag.SingleCost = singlecost;

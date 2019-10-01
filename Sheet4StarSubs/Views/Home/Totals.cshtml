@@ -13,8 +13,6 @@
     List<Sheet4StarSubs.Models.Order> ordersObj = (List<Sheet4StarSubs.Models.Order>)Session[@DateTime.Today.ToLongDateString()];
     for (int i = 0; i < ordersObj.Count; i++)
     {
-        <div class="receipt-items">
-            
             <div style="padding-top:5%;">
                 <h3>Order #@(i+1)</h3>
                 <p><b>Type of Sub:</b> @ordersObj[i].Sub</p>
@@ -22,7 +20,6 @@
                 <p><b>Type of Meal Deal: </b>@ordersObj[i].MealDeal</p>
                 <p><b>Quantity:</b> @ordersObj[i].Quantity</p>
             </div>
-        </div>
     }
     <div style="padding-top :5%;">
         <b>

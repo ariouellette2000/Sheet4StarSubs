@@ -3,12 +3,10 @@
     ViewBag.Title = "Receipt";
 }
 
-<div style="text-align:center">
     <h1>StarSubs Receipt</h1>
     <h2>Today's Date: @DateTime.Today.ToLongDateString()</h2>
-</div>
 
-<div class="receipt-items">
+
     <div style="float:left; width:50%;text-align:right; padding-right:3%;">
         <p>Type of Sub:</p>
         <p>Size of Sub:</p>
@@ -17,7 +15,6 @@
         <p>Total Price of Sub:</p>
         <p>Price of Meal Deal:</p>
         <p>Price of a Single Meal:</p>
-        <p></p>
         <br />
         <br />
         <p>Cost:</p>
@@ -32,7 +29,6 @@
         <p>@ViewBag.PriceSub.ToString("c2")</p>
         <p>@ViewBag.PriceDeal.ToString("c2")</p>
         <p>@ViewBag.SingleCost.ToString("c2")</p>
-        <p></p>
         <br />
         <br />
         <p>@ViewBag.Cost.ToString("c2")</p>
@@ -41,7 +37,6 @@
         <br />
         <br />
     </div>
-</div>
-<div style="text-align:center" s>
+<div style="text-align:center">
     @Html.ActionLink("Place another order", "Index", "Home")
 </div>
